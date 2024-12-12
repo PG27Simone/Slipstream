@@ -622,6 +622,7 @@ GameObject:
   - component: {fileID: 1496588475}
   - component: {fileID: 1496588474}
   - component: {fileID: 1496588476}
+  - component: {fileID: 1496588477}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -675,6 +676,24 @@ MonoBehaviour:
   energyLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1496588477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496588473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6bec787f1c22c4fbaae2c7966f58a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1437015235}
+  parryRadius: 2
+  powerupLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  isParryEnabled: 0
 --- !u!1 &1635586609
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +910,26 @@ PrefabInstance:
     - target: {fileID: 2778157172740512822, guid: 56ea8ced1073d7d45809eb4b8cf76635, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507992311199980925, guid: 56ea8ced1073d7d45809eb4b8cf76635, type: 3}
+      propertyPath: interactAction.m_Name
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507992311199980925, guid: 56ea8ced1073d7d45809eb4b8cf76635, type: 3}
+      propertyPath: interactAction.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507992311199980925, guid: 56ea8ced1073d7d45809eb4b8cf76635, type: 3}
+      propertyPath: interactAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 5b01512e-315f-4e46-8ffe-a977cd272b07
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507992311199980925, guid: 56ea8ced1073d7d45809eb4b8cf76635, type: 3}
+      propertyPath: interactAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Mouse>/leftButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507992311199980925, guid: 56ea8ced1073d7d45809eb4b8cf76635, type: 3}
+      propertyPath: interactAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Interact
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
