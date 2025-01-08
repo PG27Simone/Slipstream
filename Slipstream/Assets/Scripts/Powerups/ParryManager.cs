@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ParryManager : MonoBehaviour
 {
@@ -10,8 +11,15 @@ public class ParryManager : MonoBehaviour
     [SerializeField] private float parryRadius;
     [SerializeField] private LayerMask powerupLayer;
 
-    public bool isParryEnabled = false;
-    
+    //enabling different powerups
+    public bool isMagnetEnabled = false;
+    public bool isForBoostEnabled = false;
+    public bool isUpBoostEnabled = false;
+
+    //action button
+    private InputAction interactAction;
+
+
     void Awake()
     {
         if(Instance == null)
@@ -20,15 +28,56 @@ public class ParryManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        interactAction = InputSystem.actions.FindAction("Action");
+    }
+
     private void Update(){
         Collider[] powerup = Physics.OverlapSphere(player.transform.position, parryRadius, powerupLayer);
         
-        if(powerup.Length > 0){
-            isParryEnabled = true;
-        }else{
-            isParryEnabled = false;
+        //magnet powerup
+        if(powerup.Length > 0 && powerup[0].gameObject.tag == "Magnet")
+        {
+            isMagnetEnabled = true;
         }
-        
+        else if (powerup.Length > 0 && powerup[0].gameObject.tag == "Boost")
+        {
+            isForBoostEnabled = true;
+        }
+        else if (powerup.Length > 0 && powerup[0].gameObject.tag == "UpwardBoost")
+        {
+            isUpBoostEnabled = true;
+        }
+        else
+        {
+            isMagnetEnabled = false;
+            isForBoostEnabled = false;
+            isUpBoostEnabled = false;
+        }
+
+
+        //Magnet
+        if (interactAction.WasPerformedThisFrame() && isMagnetEnabled == true)
+        {
+            powerup[0].gameObject.SetActive(false);
+            isMagnetEnabled = false;
+        }
+
+        //Forward boost
+        if (interactAction.WasPerformedThisFrame() && isForBoostEnabled == true)
+        {
+            powerup[0].gameObject.SetActive(false);
+            isForBoostEnabled = false;
+        }
+
+        //Up Boost
+        if (interactAction.WasPerformedThisFrame() && isUpBoostEnabled == true)
+        {
+            powerup[0].gameObject.SetActive(false);
+            isUpBoostEnabled = false;
+        }
+
     }
 
     void OnDrawGizmos()

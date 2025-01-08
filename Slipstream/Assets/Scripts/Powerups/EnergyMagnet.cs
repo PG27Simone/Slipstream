@@ -4,29 +4,22 @@ using UnityEngine.InputSystem;
 
 public class EnergyMagnet : MonoBehaviour
 {
-    public InputAction interactAction;
+    private InputAction interactAction;
 
     private void Start(){
         interactAction = InputSystem.actions.FindAction("Action");
     }
 
     private void Update(){
-        if(interactAction.WasPerformedThisFrame() && ParryManager.Instance.isParryEnabled == true){
+        if(interactAction.WasPerformedThisFrame() && ParryManager.Instance.isMagnetEnabled == true){
                 CollectPowerup();
-                Debug.Log("parry");
-            }
+         }
         
     }
-    
-    // private void OnTriggerEnter(Collider collision)
-    // {
-    //     CollectPowerup();
-    // }
 
     private void CollectPowerup()
     {
         PowerupManager.Instance.StartMagnetEffect();
-        gameObject.SetActive(false);
     }
 
 }

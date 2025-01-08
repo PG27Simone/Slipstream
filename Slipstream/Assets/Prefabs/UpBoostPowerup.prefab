@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &388660052290735293
+--- !u!1 &577577187176053304
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2778157172740512822}
-  - component: {fileID: 1171798765658255125}
-  - component: {fileID: 2193374965996361341}
-  - component: {fileID: 1386933756273934354}
-  - component: {fileID: 3507992311199980925}
+  - component: {fileID: 4394687482826603849}
+  - component: {fileID: 6886949329105966237}
+  - component: {fileID: 5717150135443017495}
+  - component: {fileID: 2567381763339442633}
+  - component: {fileID: 154463448561939476}
   m_Layer: 7
-  m_Name: MagnetPowerup
-  m_TagString: Magnet
+  m_Name: UpBoostPowerup
+  m_TagString: UpwardBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2778157172740512822
+--- !u!4 &4394687482826603849
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388660052290735293}
+  m_GameObject: {fileID: 577577187176053304}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.44, z: 3.61}
+  m_LocalPosition: {x: -14.9, y: 1.6, z: 7.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1171798765658255125
+--- !u!33 &6886949329105966237
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388660052290735293}
+  m_GameObject: {fileID: 577577187176053304}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2193374965996361341
+--- !u!23 &5717150135443017495
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388660052290735293}
+  m_GameObject: {fileID: 577577187176053304}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73ae7b6750f05ac4fa2a9a09b36deb90, type: 2}
+  - {fileID: 2100000, guid: 3c7582005b7345e4fb7877966b55d366, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,13 +88,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1386933756273934354
+--- !u!65 &2567381763339442633
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388660052290735293}
+  m_GameObject: {fileID: 577577187176053304}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -103,30 +103,22 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3507992311199980925
+--- !u!114 &154463448561939476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388660052290735293}
+  m_GameObject: {fileID: 577577187176053304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546c5a8060bbf1d418075f08fba257a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f69b4a0a60a09b49aa61b4b5ec1e829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactAction:
-    m_Name: Interact
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e5237a36-5eb1-448b-ac64-c087d1880601
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  player: {fileID: 0}
